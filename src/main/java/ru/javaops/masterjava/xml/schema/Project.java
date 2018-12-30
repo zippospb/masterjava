@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *             &lt;complexContent>
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                 &lt;sequence>
- *                   &lt;element name="group" type="{http://javaops.ru}group" maxOccurs="unbounded" minOccurs="0"/>
+ *                   &lt;element ref="{http://javaops.ru}Group" maxOccurs="unbounded" minOccurs="0"/>
  *                 &lt;/sequence>
  *               &lt;/restriction>
  *             &lt;/complexContent>
@@ -140,7 +140,7 @@ public class Project {
      *   &lt;complexContent>
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *       &lt;sequence>
-     *         &lt;element name="group" type="{http://javaops.ru}group" maxOccurs="unbounded" minOccurs="0"/>
+     *         &lt;element ref="{http://javaops.ru}Group" maxOccurs="unbounded" minOccurs="0"/>
      *       &lt;/sequence>
      *     &lt;/restriction>
      *   &lt;/complexContent>
@@ -155,8 +155,8 @@ public class Project {
     })
     public static class Groups {
 
-        @XmlElement(namespace = "http://javaops.ru")
-        protected List<Group> group;
+        @XmlElement(name = "Group", namespace = "http://javaops.ru")
+        protected List<GroupType> group;
 
         /**
          * Gets the value of the group property.
@@ -176,13 +176,13 @@ public class Project {
          * 
          * <p>
          * Objects of the following type(s) are allowed in the list
-         * {@link Group }
+         * {@link GroupType }
          * 
          * 
          */
-        public List<Group> getGroup() {
+        public List<GroupType> getGroup() {
             if (group == null) {
-                group = new ArrayList<Group>();
+                group = new ArrayList<GroupType>();
             }
             return this.group;
         }
