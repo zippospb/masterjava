@@ -26,7 +26,7 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _City_QNAME = new QName("http://javaops.ru", "City");
-    private final static QName _Group_QNAME = new QName("http://javaops.ru", "Group");
+    private final static QName _UserGroup_QNAME = new QName("http://javaops.ru", "Group");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: ru.javaops.masterjava.xml.schema
@@ -41,14 +41,6 @@ public class ObjectFactory {
      */
     public Project createProject() {
         return new Project();
-    }
-
-    /**
-     * Create an instance of {@link User }
-     * 
-     */
-    public User createUser() {
-        return new User();
     }
 
     /**
@@ -68,19 +60,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GroupType }
+     * Create an instance of {@link User }
      * 
      */
-    public GroupType createGroupType() {
-        return new GroupType();
-    }
-
-    /**
-     * Create an instance of {@link User.Groups }
-     * 
-     */
-    public User.Groups createUserGroups() {
-        return new User.Groups();
+    public User createUser() {
+        return new User();
     }
 
     /**
@@ -116,6 +100,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Project.Groups.Group }
+     * 
+     */
+    public Project.Groups.Group createProjectGroupsGroup() {
+        return new Project.Groups.Group();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CityType }{@code >}}
      * 
      */
@@ -125,22 +117,13 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GroupType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://javaops.ru", name = "Group")
-    public JAXBElement<GroupType> createGroup(GroupType value) {
-        return new JAXBElement<GroupType>(_Group_QNAME, GroupType.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://javaops.ru", name = "Group", scope = User.Groups.class)
+    @XmlElementDecl(namespace = "http://javaops.ru", name = "Group", scope = User.class)
     @XmlIDREF
-    public JAXBElement<Object> createUserGroupsGroup(Object value) {
-        return new JAXBElement<Object>(_Group_QNAME, Object.class, User.Groups.class, value);
+    public JAXBElement<Object> createUserGroup(Object value) {
+        return new JAXBElement<Object>(_UserGroup_QNAME, Object.class, User.class, value);
     }
 
 }

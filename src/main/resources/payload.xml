@@ -4,28 +4,22 @@
     <Users>
         <User flag="active" city="kiv" email="gmail@gmail.com">
             <fullName>Full Name</fullName>
-            <Groups>
-                <Group>TJ16</Group>
-                <Group>MJ03</Group>
-            </Groups>
+            <Group>Topjava16</Group>
+            <Group>MasterJava03</Group>
         </User>
         <User flag="superuser" city="spb" email="admin@javaops.ru">
             <fullName>Admin</fullName>
-            <Groups>
-                <Group>TJ14</Group>
-                <Group>TJ15</Group>
-                <Group>TJ16</Group>
-                <Group>MJ01</Group>
-                <Group>MJ02</Group>
-                <Group>MJ03</Group>
-            </Groups>
+            <Group>Topjava14</Group>
+            <Group>Topjava15</Group>
+            <Group>Topjava16</Group>
+            <Group>MasterJava01</Group>
+            <Group>MasterJava02</Group>
+            <Group>MasterJava03</Group>
         </User>
         <User flag="deleted" city="spb" email="mail@yandex.ru">
             <fullName>Deleted</fullName>
-            <Groups>
-                <Group>TJ14</Group>
-                <Group>MJ01</Group>
-            </Groups>
+            <Group>Topjava14</Group>
+            <Group>MasterJava01</Group>
         </User>
     </Users>
     <Cities>
@@ -47,9 +41,9 @@
             <name>masterjava</name>
             <description>Многомодульный Maven</description>
             <groups>
-                <Group id="Masterjava01" type="FINISHED"/>
-                <Group id="Masterjava02" type="FINISHED"/>
-                <Group id="Masterjava03" type="CURRENT"/>
+                <Group id="MasterJava01" type="FINISHED"/>
+                <Group id="MasterJava02" type="FINISHED"/>
+                <Group id="MasterJava03" type="CURRENT"/>
             </groups>
         </Project>
     </Projects>

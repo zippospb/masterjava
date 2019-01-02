@@ -5,9 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -26,8 +31,17 @@ import javax.xml.bind.annotation.XmlType;
  *           &lt;complexType>
  *             &lt;complexContent>
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element ref="{http://javaops.ru}Group" maxOccurs="unbounded" minOccurs="0"/>
+ *                 &lt;sequence maxOccurs="unbounded">
+ *                   &lt;element name="Group">
+ *                     &lt;complexType>
+ *                       &lt;complexContent>
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                           &lt;attribute name="id" use="required" type="{http://www.w3.org/2001/XMLSchema}ID" />
+ *                           &lt;attribute name="type" use="required" type="{http://javaops.ru}groupStatus" />
+ *                         &lt;/restriction>
+ *                       &lt;/complexContent>
+ *                     &lt;/complexType>
+ *                   &lt;/element>
  *                 &lt;/sequence>
  *               &lt;/restriction>
  *             &lt;/complexContent>
@@ -139,8 +153,17 @@ public class Project {
      * &lt;complexType>
      *   &lt;complexContent>
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element ref="{http://javaops.ru}Group" maxOccurs="unbounded" minOccurs="0"/>
+     *       &lt;sequence maxOccurs="unbounded">
+     *         &lt;element name="Group">
+     *           &lt;complexType>
+     *             &lt;complexContent>
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *                 &lt;attribute name="id" use="required" type="{http://www.w3.org/2001/XMLSchema}ID" />
+     *                 &lt;attribute name="type" use="required" type="{http://javaops.ru}groupStatus" />
+     *               &lt;/restriction>
+     *             &lt;/complexContent>
+     *           &lt;/complexType>
+     *         &lt;/element>
      *       &lt;/sequence>
      *     &lt;/restriction>
      *   &lt;/complexContent>
@@ -155,8 +178,8 @@ public class Project {
     })
     public static class Groups {
 
-        @XmlElement(name = "Group", namespace = "http://javaops.ru")
-        protected List<GroupType> group;
+        @XmlElement(name = "Group", namespace = "http://javaops.ru", required = true)
+        protected List<Project.Groups.Group> group;
 
         /**
          * Gets the value of the group property.
@@ -176,15 +199,96 @@ public class Project {
          * 
          * <p>
          * Objects of the following type(s) are allowed in the list
-         * {@link GroupType }
+         * {@link Project.Groups.Group }
          * 
          * 
          */
-        public List<GroupType> getGroup() {
+        public List<Project.Groups.Group> getGroup() {
             if (group == null) {
-                group = new ArrayList<GroupType>();
+                group = new ArrayList<Project.Groups.Group>();
             }
             return this.group;
+        }
+
+
+        /**
+         * <p>Java class for anonymous complex type.
+         * 
+         * <p>The following schema fragment specifies the expected content contained within this class.
+         * 
+         * <pre>
+         * &lt;complexType>
+         *   &lt;complexContent>
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+         *       &lt;attribute name="id" use="required" type="{http://www.w3.org/2001/XMLSchema}ID" />
+         *       &lt;attribute name="type" use="required" type="{http://javaops.ru}groupStatus" />
+         *     &lt;/restriction>
+         *   &lt;/complexContent>
+         * &lt;/complexType>
+         * </pre>
+         * 
+         * 
+         */
+        @XmlAccessorType(XmlAccessType.FIELD)
+        @XmlType(name = "")
+        public static class Group {
+
+            @XmlAttribute(name = "id", required = true)
+            @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+            @XmlID
+            @XmlSchemaType(name = "ID")
+            protected String id;
+            @XmlAttribute(name = "type", required = true)
+            protected GroupStatus type;
+
+            /**
+             * Gets the value of the id property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link String }
+             *     
+             */
+            public String getId() {
+                return id;
+            }
+
+            /**
+             * Sets the value of the id property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *     
+             */
+            public void setId(String value) {
+                this.id = value;
+            }
+
+            /**
+             * Gets the value of the type property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link GroupStatus }
+             *     
+             */
+            public GroupStatus getType() {
+                return type;
+            }
+
+            /**
+             * Sets the value of the type property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link GroupStatus }
+             *     
+             */
+            public void setType(GroupStatus value) {
+                this.type = value;
+            }
+
         }
 
     }
