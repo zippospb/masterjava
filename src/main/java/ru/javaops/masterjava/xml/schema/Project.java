@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *       &lt;sequence>
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="groups">
+ *         &lt;element name="Groups">
  *           &lt;complexType>
  *             &lt;complexContent>
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -68,7 +68,7 @@ public class Project {
     protected String name;
     @XmlElement(namespace = "http://javaops.ru", required = true)
     protected String description;
-    @XmlElement(namespace = "http://javaops.ru", required = true)
+    @XmlElement(name = "Groups", namespace = "http://javaops.ru", required = true)
     protected Project.Groups groups;
 
     /**

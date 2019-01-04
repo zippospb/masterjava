@@ -67,7 +67,7 @@
             <xs:sequence>
                 <xs:element type="xs:string" name="name"/>
                 <xs:element type="xs:string" name="description"/>
-                <xs:element name="groups">
+                <xs:element name="Groups">
                     <xs:complexType>
                         <xs:sequence minOccurs="1" maxOccurs="unbounded">
                             <xs:element name="Group">

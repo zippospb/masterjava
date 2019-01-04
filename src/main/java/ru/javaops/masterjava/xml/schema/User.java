@@ -49,7 +49,7 @@ public class User {
     @XmlElement(namespace = "http://javaops.ru", required = true)
     protected String fullName;
     @XmlElementRef(name = "Group", namespace = "http://javaops.ru", type = JAXBElement.class, required = false)
-    protected List<Project.Groups.Group> group;
+    protected List<JAXBElement<Object>> group;
     @XmlAttribute(name = "email")
     protected String email;
     @XmlAttribute(name = "flag", required = true)
@@ -85,29 +85,29 @@ public class User {
 
     /**
      * Gets the value of the group property.
-     *
+     * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the group property.
-     *
+     * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getGroup().add(newItem);
      * </pre>
      *
-     *
+     * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link JAXBElement }{@code <}{@link Object }{@code >}
-     *
+     * 
      * 
      */
-    public List<Project.Groups.Group> getGroup() {
+    public List<JAXBElement<Object>> getGroup() {
         if (group == null) {
-            group = new ArrayList<>();
+            group = new ArrayList<JAXBElement<Object>>();
         }
         return this.group;
     }

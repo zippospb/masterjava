@@ -31,20 +31,20 @@
         <Project>
             <name>topjava</name>
             <description>From junior to middle level</description>
-            <groups>
+            <Groups>
                 <Group id="Topjava14" type="FINISHED"/>
                 <Group id="Topjava15" type="CURRENT"/>
                 <Group id="Topjava16" type="REGISTERING"/>
-            </groups>
+            </Groups>
         </Project>
         <Project>
             <name>masterjava</name>
             <description>Многомодульный Maven</description>
-            <groups>
+            <Groups>
                 <Group id="MasterJava01" type="FINISHED"/>
                 <Group id="MasterJava02" type="FINISHED"/>
                 <Group id="MasterJava03" type="CURRENT"/>
-            </groups>
+            </Groups>
         </Project>
     </Projects>
 </Payload>
