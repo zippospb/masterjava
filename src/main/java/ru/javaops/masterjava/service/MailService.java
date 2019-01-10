@@ -1,6 +1,5 @@
 package ru.javaops.masterjava.service;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -13,7 +12,7 @@ public class MailService {
     private static final String INTERRUPTED_EXCEPTION = "+++ InterruptedException";
 
     public GroupResult sendToList(final String template, final Set<String> emails) throws Exception {
-        return new GroupResult(0, new ArrayList<MailResult>(), null);
+        return new GroupResult(0, Collections.emptyList(), null);
     }
 
 
