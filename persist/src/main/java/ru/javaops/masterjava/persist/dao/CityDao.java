@@ -14,7 +14,7 @@ import java.util.List;
 @RegisterMapperFactory(EntityMapperFactory.class)
 public abstract class CityDao implements AbstractDao {
 
-    @SqlUpdate("TRUNCATE cities")
+    @SqlUpdate("TRUNCATE cities CASCADE")
     @Override
     public abstract void clean();
 
