@@ -23,7 +23,7 @@ public class MailCase extends BaseEntity {
     private String state;
     private Date datetime;
 
-    public static MailCase of(List<Addressee> to, List<Addressee> cc, String subject, String state) {
+    public static MailCase of(List<Addressee> to, List<Addressee> cc, String subject, String state){
         return new MailCase(Joiner.on(", ").join(to), Joiner.on(", ").join(cc), subject, state, new Date());
     }
 }
